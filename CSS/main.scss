@@ -1,0 +1,270 @@
+@font-face {
+  font-family: "Comfortaa";
+  src: url("Font/Comfortaa-VariableFont_wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.header {
+  background: #3b5ea3;
+  .wrapper {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .burger {
+      font-size: 50px;
+      cursor: pointer;
+      background: #d88282;
+      height: 40px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      color: white;
+    }
+    .nav {
+      ul {
+        display: flex;
+        gap: 40px;
+        li {
+          a {
+            border-radius: 20px;
+            color: black;
+            background-color: #64c5b9;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      width: 70px;
+      height: 70px;
+      a {
+        img {
+          max-width: 100px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.main {
+  background-image: url("../IMG/main.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+  .wrapper {
+    display: flex;
+    gap: 80px;
+    flex-direction: column;
+    .description {
+      margin-top: 60px;
+
+      max-width: 380px;
+      align-items: center;
+      font-family: "Comfortaa";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+
+      text-align: center;
+
+      color: #ffffff;
+    }
+    .block_down {
+      display: flex;
+      .quote {
+        font-family: "Comfortaa";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+
+        text-align: center;
+
+        color: #ffffff;
+        max-width: 380px;
+        flex: 1;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .author {
+          margin-left: auto;
+        }
+      }
+      .btn_block {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn {
+          padding: 10px;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 60px;
+          font-family: "Comfortaa";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 30px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+.menu {
+  background-color: #3b5ea3;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(100%, 0);
+  transition: transform 0.3s ease-in-out;
+  &.active {
+    transform: translate(0, 0);
+  }
+  ul {
+    margin-top: 90px;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    text-align: center;
+    li {
+      margin: 0 auto;
+      font-size: 20px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      background: #fff2f2;
+      padding: 10px;
+    }
+  }
+}
+.navs {
+  display: none;
+  padding: 30px 0;
+  .wrapper {
+    .nav {
+      margin: 0 auto;
+      text-align: center;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        li {
+          a {
+            border-radius: 20px;
+            color: black;
+            background-color: #64c5b9;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 725px) {
+  .wrapper {
+    max-width: 600px;
+  }
+  .main .wrapper .description {
+    margin-top: 60px;
+    max-width: 100%;
+    align-items: center;
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .main .wrapper .block_down {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .main .wrapper .block_down .quote {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+    max-width: 380px;
+    flex: 1;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .header .wrapper .nav {
+    display: none;
+  }
+
+  .navs {
+    background: #3b5ea3;
+
+    display: block;
+  }
+}
+@media (max-width: 420px) {
+  .main .wrapper .block_down .btn_block .btn a {
+    font-size: 16px;
+  }
+  .main .wrapper .description {
+    margin-top: 40px;
+
+    font-size: 25px;
+  }
+  .main .wrapper .block_down .quote {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    max-width: 380px;
+    flex: 1;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}

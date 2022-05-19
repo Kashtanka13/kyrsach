@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../CSS/article.css">
+         <link rel="icon"  sizes="32x32" href="../IMG/logo.svg">
+   <title>Статьи</title>
+</head>
+
+<body>
+   <header class="header">
+      <div class="wrapper">
+         <div class="logo">
+            <a href="../index.html"> <img src="../IMG/logo.svg" alt="logo"></a>
+         </div>
+         <nav class="nav">
+            <ul>
+               <li>
+                  <a href="../index.html">Главная</a>
+               </li>
+               <li>
+                  <a href="order.html">
+                     Заказ консультации
+                  </a>
+               </li>
+               <li>
+                  <a href="article.html">
+                     Статьи
+                  </a>
+            </ul>
+         </nav>
+         <div class="burger">
+            Меню
+         </div>
+      </div>
+   </header>
+   <article class="main_article">
+      <div class="wrapper articles">
+         <!--    <div class="block_article">
+            <div class="block_img">
+               <img src="../IMG/article_fitst.png" alt="main_img">
+            </div>
+            <div class="block_text">
+               Курение — это привычка, противная зрению, невыносимая для обоняния, вредная для мозга, опасная для
+               легких.
+               «Для них, для славян — никакой гигиены, только водка и табак» А. Гитлер
+               Если даже Гитлер знал и хорошо понимал вред курения и навязывал его славянам, то сегодня славяне пьют,
+               курят, употребляют наркотики исключительно сами, посмотрев рекламу или попав под влияние окружающих.
+            </div>
+         </div>
+           <div class="block_article"> 
+            <div class="block_img">
+               <img src="../IMG/article_two.png" alt="main_img">
+            </div>
+            <div class="block_text">
+              По данным Всемирной организации здравоохранения, курят более 28% россиян. А по данным ВЦИОМ, это число еще больше — около 33%, то есть более 35 миллионов человек. Примерно треть этих людей пыталась бросить в течение последнего года, но получилось только у 10%. Оставить эту вредную привычку не так просто, а новых факторов, которые приводят к ухудшению здоровья, с каждым годом появляется все больше. Сегодня расскажем о 10 последствиях курения для организма и почему важно бросить курить, не дожидаясь понедельника.
+            </div>
+         </div>
+           <div class="block_article">
+            <div class="block_img">
+               <img src="../IMG/article_three.png" alt="main_img">
+            </div>
+            <div class="block_text">
+             Растение табак способно вырабатывать химические ядовитые алкалоиды (в том числе никотин), которые оно использует для защиты от насекомых-вредителей. При попытке съесть растение насекомому становится плохо, так как никотин действует на определенные рецепторы в мозге и вмешивается в передачу нервных импульсов. В конце концов вредитель умирает.
+            </div>
+         </div>
+            <div class="block_article">
+            <div class="block_img">
+               <img src="../IMG/article_four.png" alt="main_img">
+            </div>
+            <div class="block_text">
+            Тревожные люди стремятся облегчить своё состояние и прибегают к наркотическим и психоактивным веществам. К тому же курение во многих фильмах и песнях преподносится как способ снять стресс, а знаменитости с пагубными привычками подталкивают поклонников подражать, в том числе и курить.
+            </div>
+         </div> -->
+      </div>
+   </article>
+   <div class="menu">
+      <ul>
+         <li>
+           <a href="http://www.health.gov.ua/health.nsf/1b45f02676a7cea4c125678d003f98dc/f3cf1302de9a1f99c12567e80042d3fb?OpenDocument#:~:text=первые%20табачные%20плантации%20появляются%20в,высушенных%20листьев%20готовили%20нюхательный%20порошок." id="black"> История появления курения</a>
+         </li>
+         <li>
+            <a href="https://www.batrussia.ru/group/sites/BAT_AGMJTP.nsf/vwPagesWebLive/DOAGSMX5" id="black">История табака</a>
+         </li>
+         <li>
+            <a href="https://vapeghost.ru/news/istoriya-razvitiya-elektronnykh-sigaret-ili-kak-poyavilsya-modnyy-veyp/" id="black">Первая электронная сигарета</a>
+         </li>
+         <li>
+         <a href="https://ru.wikipedia.org/wiki/Снюс" id="black">Первое некурительное изделие</a>
+         </li>
+      </ul>
+   </div>
+   <script>
+      var xmlhttp = new XMLHttpRequest();
+      var path = "../XML/data.xml";
+      xmlhttp.open("GET", path, true);
+      xmlhttp.send();
+      xmlhttp.onreadystatechange = function () {
+         if (this.readyState == 4 && this.status == 200) {
+            var xmlDoc = this.responseXML;
+            var x = xmlDoc.getElementsByTagName("article");
+            for (i = 0; i < x.length; i++) {
+               let description = x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+               let img = x[i].getElementsByTagName("img")[0].childNodes[0].nodeValue;
+               var div = `
+             <div class="block_article">
+            <div class="block_img">
+               <img src=${img} alt="main_img">
+            </div>
+            <div class="block_text">
+           ${description}
+            </div>
+         </div>`
+               document.querySelector(".articles").innerHTML += div;
+            }
+         }
+      }
+   </script>
+   <script src="../JS/main.js">
+   </script>
+
+</body>
+
+</html>

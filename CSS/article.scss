@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Comfortaa";
+  src: url("Font/Comfortaa-VariableFont_wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.header {
+  background: #3b5ea3;
+  .wrapper {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .burger {
+        z-index: 100;
+      font-size: 50px;
+      cursor: pointer;
+      background: #d88282;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      color: white;
+    }
+    .nav {
+      ul {
+        display: flex;
+        gap: 40px;
+        li {
+          a {
+            border-radius: 20px;
+            color: black;
+            background-color: #64c5b9;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      width: 70px;
+      height: 70px;
+      a {
+        img {
+          max-width: 100px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.menu {
+  background-color: #3b5ea3;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(100%, 0);
+  transition: transform 0.3s ease-in-out;
+  &.active {
+    transform: translate(0, 0);
+  }
+  ul {
+    margin-top: 90px;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    text-align: center;
+    li {
+      margin: 0 auto;
+      font-size: 20px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      background: #fff2f2;
+      padding: 10px;
+    }
+  }
+}
+.main_article {
+  padding: 40px 0;
+  .wrapper {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    .block_text {
+      margin: 0 auto;
+      max-width: 400px;
+
+      padding: 5px 0;
+      overflow: hidden;
+      font-family: "Comfortaa";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+    }
+    .block_img {
+      margin: 0 auto;
+      max-width: 400px;
+      overflow: hidden;
+      height: 300px;
+
+      img {
+        width: 100%;
+        cursor: pointer;
+        object-fit: cover;
+        transition: 0.4s;
+        height: 100%;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 725px) {
+  .wrapper {
+    max-width: 600px;
+  }
+  .header .wrapper .nav {
+    display: none;
+  }
+}
